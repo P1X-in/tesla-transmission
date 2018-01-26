@@ -1,0 +1,8 @@
+*.sublime-*
+.idea
+.fscache
+
+.import
+export.cfg
+*.tmp
+*.keystore
