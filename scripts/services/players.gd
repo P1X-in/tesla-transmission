@@ -13,3 +13,4 @@ func _initialize():
 
 func bind_players():
     self.player1.bind_controls(self.bag.input)
+    self.player1.ship.bind(self.bag.test)

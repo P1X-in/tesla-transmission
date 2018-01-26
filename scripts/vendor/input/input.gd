@@ -34,7 +34,7 @@ func switch_to_scheme(scheme):
     self.active_scheme = scheme
 
 func _load_basic_input():
-    self.register_handler('default', 'keyboard', preload("res://scripts/vendor/input/handlers/quit.gd").new(self.bag.root))
+    self.register_handler('default', self.DEVICE_KEYBOARD, preload("res://scripts/vendor/input/handlers/quit.gd").new(self.bag.root))
     self.load_input()
 
 func create_scheme(name):

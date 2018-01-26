@@ -5,13 +5,9 @@ func load_input():
 
     self.create_scheme("empty")
 
+    self.create_scheme("game")
+    self.register_device("game", self.DEVICE_KEYBOARD)
 
-func lock_input():
-    self.switch_to_scheme("empty")
-
-func unlock_input():
-    self.switch_to_scheme("default")
-
-func temp_lock_input():
-    self.lock_input()
-    self.bag.timers.set_timeout(1, self, "unlock_input")
+    self.register_handler('game', self.DEVICE_KEYBOARD, preload("res://scripts/vendor/input/handlers/quit.gd").new(self.bag.root))
+    self.register_handler('game', self.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/move_left_keyboard.gd").new(self.bag))
+    self.register_handler('game', self.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/move_right_keyboard.gd").new(self.bag))
