@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://world_enviroment.tres" type="Environment" id=1]
+[ext_resource path="res://materials/world_enviroment.tres" type="Environment" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
@@ -61,7 +61,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Detail", "Refraction", "Subsurf Scatter" ]
 
-[node name="test" type="Spatial" index="0"]
+[node name="test" type="Spatial"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 
