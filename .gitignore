@@ -6,3 +6,4 @@
 export.cfg
 *.tmp
 *.keystore
+default_env.tres
