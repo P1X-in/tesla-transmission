@@ -1,9 +1,9 @@
 extends "res://scripts/vendor/input/handlers/abstract_handler.gd"
 
-var scancode = null
+var axis
 
 func can_handle(event):
-    if self.scancode == event.scancode:
+    if event is InputEventJoypadMotion and handler.axis == event.axis:
         return true
 
     return false

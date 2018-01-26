@@ -27,7 +27,7 @@ func execute_timeout(object, method, args, timer):
     else:
         object.call(method)
 
-    self.pool[timer.get_instance_ID()] = timer
+    self.pool[timer.get_instance_id()] = timer
 
 func get_next_timer():
     var timer = null
@@ -35,7 +35,7 @@ func get_next_timer():
         timer = self.pool[timer_id]
 
     if timer != null:
-        self.pool.erase(timer.get_instance_ID())
+        self.pool.erase(timer.get_instance_id())
         return timer
 
     return Timer.new()

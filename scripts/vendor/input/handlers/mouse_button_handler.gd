@@ -1,9 +1,9 @@
 extends "res://scripts/vendor/input/handlers/abstract_handler.gd"
 
-var scancode = null
+var button_index
 
 func can_handle(event):
-    if self.scancode == event.scancode:
+    if event is InputEventMouseButton and self.button_index == event.button_index:
         return true
 
     return false

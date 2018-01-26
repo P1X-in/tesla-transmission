@@ -7,11 +7,11 @@ const DEVICE_ARCADE = 'arcade'
 const DEVICE_ANY = 'any'
 
 
-var keyboard_template = preload("res://scripts/services/input/keyboard.gd")
-var gamepad_template = preload("res://scripts/services/input/gamepad.gd")
-var mouse_template = preload("res://scripts/services/input/mouse.gd")
-var arcade_template = preload("res://scripts/services/input/arcade.gd")
-var any_device_template = preload("res://scripts/services/input/any_device.gd")
+var keyboard_template = preload("res://scripts/vendor/input/keyboard.gd")
+var gamepad_template = preload("res://scripts/vendor/input/gamepad.gd")
+var mouse_template = preload("res://scripts/vendor/input/mouse.gd")
+var arcade_template = preload("res://scripts/vendor/input/arcade.gd")
+var any_device_template = preload("res://scripts/vendor/input/any_device.gd")
 
 var schemes = {
     "default" : {
@@ -23,6 +23,7 @@ var active_scheme = "default"
 
 func _initialize():
     self._load_basic_input()
+    self.bag.root.set_process_input(true)
 
 func handle_event(event):
     for device in self.schemes[self.active_scheme]:
@@ -33,7 +34,7 @@ func switch_to_scheme(scheme):
     self.active_scheme = scheme
 
 func _load_basic_input():
-    self.register_handler('default', 'keyboard', preload("res://scripts/services/input/handlers/quit.gd").new())
+    self.register_handler('default', 'keyboard', preload("res://scripts/vendor/input/handlers/quit.gd").new(self.bag.root))
     self.load_input()
 
 func create_scheme(name):

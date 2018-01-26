@@ -1,7 +1,7 @@
 extends "res://scripts/vendor/bag_aware.gd"
 
 var container
-var wrapper_template = preload("res://scripts/services/processing_wrapper.gd")
+var wrapper_template = preload("res://scripts/vendor/processing_wrapper.gd")
 
 var ready = false
 
@@ -14,17 +14,17 @@ func _initialize():
 
 func register(object):
     var wrapper = self.wrapper_template.new(self, object)
-    self.objects[object.get_instance_ID()] = wrapper
+    self.objects[object.get_instance_id()] = wrapper
     self.container.add_child(wrapper)
 
 func remove(object):
-    if not self.objects.has(object.get_instance_ID()):
+    if not self.objects.has(object.get_instance_id()):
         return
 
-    var wrapper = self.objects[object.get_instance_ID()]
+    var wrapper = self.objects[object.get_instance_id()]
     wrapper.kill()
     self.container.remove_child(wrapper)
-    self.objects.erase(object.get_instance_ID())
+    self.objects.erase(object.get_instance_id())
 
 func reset():
     var wrapper
