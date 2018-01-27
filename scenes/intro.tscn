@@ -26,7 +26,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 10 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, -4 ), Vector3( 0, 0, -200 ) ]
 }
 
-[node name="intro" type="Spatial" index="0"]
+[node name="intro" type="Spatial"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
 
@@ -155,7 +155,7 @@ transform = Transform( 12, -2.09736e-06, -4.06036e-08, 2.0948e-06, 11.9932, -0.4
 
 [node name="player" parent="." index="5" instance=ExtResource( 6 )]
 
-transform = Transform( 0.210618, -0.40212, 0.891033, -0.134314, 0.890931, 0.433822, -0.968297, -0.211049, 0.133636, 0, 0, -200 )
+transform = Transform( 0.213526, -0.46795, 0.857571, -0.12099, 0.858391, 0.498523, -0.969416, -0.210206, 0.126672, 0, 0, -200 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
 
