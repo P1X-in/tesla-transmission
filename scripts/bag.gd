@@ -7,4 +7,5 @@ func _pre_initialize():
     self.input = preload("res://scripts/input/input.gd").new()
 
 func _initialize():
+    self.board._initialize(self.root, self.input)
     self.players._init_bag(self)

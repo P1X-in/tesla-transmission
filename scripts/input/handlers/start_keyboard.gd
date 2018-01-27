@@ -1,12 +1,11 @@
 extends "res://scripts/vendor/input/handlers/keyboard_handler.gd"
 
-var bag
+var board
 
-func _init(bag):
+func _init(board):
     self.scancode = KEY_SPACE
-    self.bag = bag
+    self.board = board
 
 func handle(event):
     if event.is_pressed():
-        self.bag.root.add_child(self.bag.board.scene)
-        self.bag.input.switch_to_scheme("game")
+        board.start_game()

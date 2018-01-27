@@ -1,7 +1,7 @@
 extends "res://scripts/vendor/input/input.gd"
 
 func load_input():
-    self.register_handler('default', self.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/start_keyboard.gd").new(self.bag))
+    self.register_handler('default', self.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/start_keyboard.gd").new(self.bag.board))
 
     self.create_scheme("empty")
 
