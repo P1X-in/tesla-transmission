@@ -6,7 +6,7 @@ var player_template = preload("res://scripts/entities/player.gd")
 
 var players = []
 
-var default_ship_type = 'avalon'
+var default_ship_type = ['avalon', 'scorpion']
 
 func _initialize():
     self._build_players()
@@ -24,7 +24,7 @@ func _build_player(index):
     player.director = self.bag.director
     player.players = self
 
-    player.use_ship(self._get_ship(self.default_ship_type))
+    player.use_ship(self._get_ship(self.default_ship_type[index]))
 
     return player
 
