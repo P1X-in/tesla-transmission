@@ -24,9 +24,12 @@ func _init(board, processing, timers, cache).(board, processing):
 
     self.free_avatar = false
     self.type_name = 'ship'
+    self.default_rotation = 90
 
 func reverse():
-    return
+    .reverse()
+    self.shot_spawn_offset.z = -self.shot_spawn_offset.z
+
 
 func spawn_shot():
     if self.shot_on_cooldown:
@@ -34,6 +37,9 @@ func spawn_shot():
 
     var shot = self._get_shot_instance()
     var position = self.get_pos() + self.shot_spawn_offset
+
+    if self.reversed:
+        shot.reverse()
 
     shot.spawn(position)
     self.shot_on_cooldown = true
@@ -55,6 +61,7 @@ func _get_shot_instance():
     var object = self.cache.request(self.shot_template_name)
 
     if object != null:
+        object.reset()
         return object
 
     return self.shot_template.new(self.board, self.processing, self.cache)
@@ -71,3 +78,4 @@ func reset():
     self.die_on_collision = false
     self.constrain_position = true
     self.enemy = null
+    self.shot_spawn_offset = Vector3(0, 0, -2.5)

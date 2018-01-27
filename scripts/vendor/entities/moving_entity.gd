@@ -9,6 +9,9 @@ var position_constraint_positive = Vector3(0, 0, 0)
 var position_constraint_negative = Vector3(0, 0, 0)
 var constrain_position = false
 
+var reversed = false
+var default_rotation = 0
+
 var collision
 
 func _init(board, processing).(board):
@@ -24,6 +27,8 @@ func despawn():
 
 func reset():
     self.movement_vector = Vector3()
+    self.reversed = false
+    self.avatar.set_rotation_degrees(Vector3(0, self.default_rotation, 0))
 
 func process(delta):
     self._modify_position(delta)
@@ -50,3 +55,7 @@ func _constrain_position():
     position.z = max(position.z, self.position_constraint_negative.z)
 
     self.set_pos(position)
+
+func reverse():
+    self.reversed = true
+    self.avatar.set_rotation_degrees(Vector3(0, self.default_rotation + 180, 0))
