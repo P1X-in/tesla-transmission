@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://materials/world_enviroment.tres" type="Environment" id=1]
 [ext_resource path="res://assets/2k_stars_milky_way.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/moon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/stars_particles.tscn" type="PackedScene" id=4]
 
 [node name="board" type="Spatial" index="0"]
 
@@ -96,5 +97,9 @@ directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 1
 directional_shadow_max_distance = 200.0
 _sections_unfolded = [ "Directional Shadow", "Light", "Shadow", "Transform" ]
+
+[node name="Particles" parent="." index="4" instance=ExtResource( 4 )]
+
+transform = Transform( 12, -2.09736e-06, -4.06036e-08, 2.0948e-06, 11.9932, -0.404699, 1.11314e-07, 0.404699, 11.9932, -0.294629, 0, -430.745 )
 
 
