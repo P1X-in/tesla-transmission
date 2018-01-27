@@ -72,7 +72,7 @@ transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 64, -75.5071, 92.3463, -250 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="3"]
 
-transform = Transform( 0.477839, -0.226803, 0.848664, 0.0620177, 0.972394, 0.224951, -0.876256, -0.0548581, 0.478713, 5.70959, 0.239865, 0.890096 )
+transform = Transform( 0.857812, 0.104307, -0.503268, 0.383689, 0.521544, 0.762086, 0.341968, -0.846824, 0.407365, 5.70959, 0.239865, 0.890096 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0

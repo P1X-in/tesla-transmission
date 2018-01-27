@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://models/ship_1.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://models/ship1.obj" type="ArrayMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -9,6 +9,7 @@ height = 1.0
 
 [node name="player" type="KinematicBody"]
 
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -29,6 +30,7 @@ disabled = false
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.942835, 1.13775 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -42,7 +44,5 @@ mesh = ExtResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
 material/1 = null
-material/2 = null
-material/3 = null
 
 
