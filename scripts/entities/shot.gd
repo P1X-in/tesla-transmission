@@ -5,6 +5,8 @@ var cache
 var dead_end_position = -100
 var front_end_position = 2
 
+var player
+
 func _init(board, processing, cache).(board, processing):
     self.avatar = preload("res://scenes/laser.tscn").instance()
     self.cache = cache

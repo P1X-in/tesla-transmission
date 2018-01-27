@@ -1,7 +1,8 @@
 extends "res://scripts/vendor/bag_aware.gd"
 
 var ship_templates = {
-    'avalon' : preload("res://scripts/entities/ships/avalon.gd")
+    'avalon' : preload("res://scripts/entities/ships/avalon.gd"),
+    'icarus' : preload("res://scripts/entities/ships/icarus.gd")
 }
 
 func get(type):

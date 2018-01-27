@@ -14,6 +14,7 @@ var shot_on_cooldown = false
 var shooting = false
 var die_on_collision = false
 var enemy
+var player
 
 func _init(board, processing, timers, cache).(board, processing):
     self.avatar = preload("res://scenes/ship1.tscn").instance()
@@ -100,6 +101,7 @@ func reset():
     self.die_on_collision = false
     self.constrain_position = true
     self.enemy = null
+    self.player = null
     self.shot_spawn_offset = Vector3(0, 0, -2.5)
     self.avatar.set_collision_layer(1)
     self.avatar.set_collision_mask(1)

@@ -23,7 +23,7 @@ func generate_waves():
 func _generate_step():
     return {
         'path_type' : 'side_front_curve',
-        'ship_type' : 'avalon',
+        'ship_type' : 'icarus',
         'timeout' : 0.5,
         'path_params' : {
             'altitude' : self.altitude

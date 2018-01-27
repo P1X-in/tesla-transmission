@@ -7,6 +7,7 @@ var is_alive = true
 
 func use_ship(ship):
     self.ship = ship
+    self.ship.player = self
 
 func bind_controls(input):
     self._bind_keyboard_left_side(input)
