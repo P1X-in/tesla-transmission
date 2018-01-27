@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://materials/moon.tres" type="Material" id=1]
+[ext_resource path="res://materials/planet.tres" type="Material" id=1]
 
 [sub_resource type="SphereMesh" id=1]
 
@@ -29,9 +29,9 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[node name="moon" type="MeshInstance" index="0"]
+[node name="moon" type="MeshInstance"]
 
-transform = Transform( 52.1546, 0, 37.0931, 0, 64, 0, -37.0931, 0, 52.1546, 0, 0, -96 )
+transform = Transform( 64, 0, 4.17077e-05, 0, 64, 0, -4.17077e-05, 0, 64, 0, 0, -96 )
 layers = 1
 material_override = ExtResource( 1 )
 cast_shadow = 1
