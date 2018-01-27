@@ -3,6 +3,7 @@
 .fscache
 
 .import
+*.import
 export.cfg
 *.tmp
 *.keystore
