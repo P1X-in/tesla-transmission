@@ -22,12 +22,7 @@ func execute_pattern(pattern):
     pattern.begin()
 
 func _get_ship(ship_name):
-    var ship = self.bag.cache.request(ship_name)
-
-    if ship == null:
-        ship = self.ship_template.new(self.bag.board, self.bag.processing, self.bag.timers, self.bag.cache)
-
-    ship.reset()
+    var ship = self.bag.ships_factory.get(ship_name)
     ship.die_on_collision = true
     ship.constrain_position = false
     ship.reverse()

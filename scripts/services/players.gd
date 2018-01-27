@@ -7,7 +7,7 @@ var ship_template = preload("res://scripts/entities/ship.gd")
 
 var players = []
 
-var default_ship_type = 'ship'
+var default_ship_type = 'avalon'
 
 func _initialize():
     self._build_players()
@@ -29,13 +29,7 @@ func _build_player(index):
     return player
 
 func _get_ship(ship_name):
-    var ship = self.bag.cache.request(ship_name)
-
-    if ship == null:
-        ship = self.ship_template.new(self.bag.board, self.bag.processing, self.bag.timers, self.bag.cache)
-
-    ship.reset()
-    return ship
+    return self.bag.ships_factory.get(ship_name)
 
 func _build_players():
     var i
