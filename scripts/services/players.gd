@@ -20,7 +20,7 @@ func _bind_player(player):
 
 func _build_player(index):
     var player = self.player_template.new()
-    player.use_ship(self.ship_template.new(self.bag.board, self.bag.processing))
+    player.use_ship(self.ship_template.new(self.bag.board, self.bag.processing, self.bag.timers))
 
     return player
 

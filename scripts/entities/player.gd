@@ -27,3 +27,12 @@ func _bind_keyboard_left_side(input):
     input.register_handler('game', input.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/move_keyboard.gd").new(self.ship, "x", -1, KEY_A))
     input.register_handler('game', input.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/move_keyboard.gd").new(self.ship, "y", 1, KEY_W))
     input.register_handler('game', input.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/move_keyboard.gd").new(self.ship, "y", -1, KEY_S))
+
+
+    input.register_handler('game', input.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/shoot_keyboard.gd").new(self, KEY_V))
+
+func shoot():
+    if self.ship == null or not self.is_in_game:
+        return
+
+    self.ship.spawn_shot()
