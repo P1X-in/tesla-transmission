@@ -7,5 +7,4 @@ func _init(player, scancode):
     self.scancode = scancode
 
 func handle(event):
-    if event.is_pressed():
-        self.player.shoot()
+    self.player.set_shooting(event.is_pressed())

@@ -31,8 +31,9 @@ func _bind_keyboard_left_side(input):
 
     input.register_handler('game', input.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/shoot_keyboard.gd").new(self, KEY_V))
 
-func shoot():
+
+func set_shooting(shooting):
     if self.ship == null or not self.is_in_game:
         return
 
-    self.ship.spawn_shot()
+    self.ship.shooting = shooting

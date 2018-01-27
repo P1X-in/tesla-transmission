@@ -6,14 +6,15 @@ var shot_template = preload("res://scripts/entities/shot.gd")
 var shot_spawn_offset = Vector3(0, 0, -3)
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
+var shooting = false
 
 func _init(board, processing, timers).(board, processing):
     self.avatar = preload("res://scenes/player.tscn").instance()
     self.timers = timers
 
     self.velocity = 5
-    self.position_constraint_positive = Vector3(5, 11, 0)
-    self.position_constraint_negative = Vector3(-5, 0.5, 0)
+    self.position_constraint_positive = Vector3(10, 11, 0)
+    self.position_constraint_negative = Vector3(-10, 0.5, 0)
     self.constrain_position = true
 
 func spawn_shot():
@@ -29,3 +30,9 @@ func spawn_shot():
 
 func remove_cooldown():
     self.shot_on_cooldown = false
+
+func process(delta):
+    .process(delta)
+
+    if self.shooting:
+        self.spawn_shot()
