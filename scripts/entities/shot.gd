@@ -3,9 +3,9 @@ extends "res://scripts/vendor/entities/moving_entity.gd"
 var dead_end_position = -100
 
 func _init(board, processing).(board, processing):
-    self.avatar = preload("res://scenes/player.tscn").instance()
+    self.avatar = preload("res://scenes/laser.tscn").instance()
 
-    self.velocity = 40
+    self.velocity = 140
     self.movement_vector = Vector3(0, 0, -1)
 
 func process(delta):
