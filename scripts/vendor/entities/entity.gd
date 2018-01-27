@@ -6,6 +6,8 @@ var is_processing = false
 var free_avatar = true
 var initial_position = Vector3(0, 0, 0)
 
+var type_name = 'generic'
+
 func _init(board):
     self.board = board
 

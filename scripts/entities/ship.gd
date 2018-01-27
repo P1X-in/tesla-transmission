@@ -1,16 +1,19 @@
 extends "res://scripts/vendor/entities/moving_entity.gd"
 
 var timers
+var cache
 
 var shot_template = preload("res://scripts/entities/shot.gd")
+var shot_template_name = 'laser'
 var shot_spawn_offset = Vector3(0, 0, -1.5)
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
 var shooting = false
 
-func _init(board, processing, timers).(board, processing):
+func _init(board, processing, timers, cache).(board, processing):
     self.avatar = preload("res://scenes/player.tscn").instance()
     self.timers = timers
+    self.cache = cache
 
     self.velocity = 24
     self.position_constraint_positive = Vector3(10, 11, 0)
@@ -21,7 +24,7 @@ func spawn_shot():
     if self.shot_on_cooldown:
         return
 
-    var shot = self.shot_template.new(self.board, self.processing)
+    var shot = self._get_shot_instance()
     var position = self.get_pos() + self.shot_spawn_offset
 
     shot.spawn(position)
@@ -36,3 +39,11 @@ func process(delta):
 
     if self.shooting:
         self.spawn_shot()
+
+func _get_shot_instance():
+    var object = self.cache.request(self.shot_template_name)
+
+    if object != null:
+        return object
+
+    return self.shot_template.new(self.board, self.processing, self.cache)
