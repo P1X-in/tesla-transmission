@@ -5,6 +5,9 @@ var cache
 
 var shot_template = preload("res://scripts/entities/shot.gd")
 var shot_template_name = 'laser'
+var enemy_shot_template = preload("res://scripts/entities/red_laser.gd")
+var enemy_shot_template_name = 'laser_red'
+
 var shot_spawn_offset = Vector3(0, 0, -2.5)
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
@@ -67,13 +70,23 @@ func process(delta):
         self.enemy.despawn()
 
 func _get_shot_instance():
-    var object = self.cache.request(self.shot_template_name)
+    var object
+
+    if self.enemy != null:
+        object = self.cache.request(self.enemy_shot_template_name)
+    else:
+        object = self.cache.request(self.shot_template_name)
 
     if object != null:
         object.reset()
         return object
 
-    return self.shot_template.new(self.board, self.processing, self.cache)
+    if self.enemy != null:
+        object = self.enemy_shot_template.new(self.board, self.processing, self.cache)
+    else:
+        object = self.shot_template.new(self.board, self.processing, self.cache)
+
+    return object
 
 func despawn():
     .despawn()
