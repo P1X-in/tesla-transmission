@@ -28,4 +28,5 @@ func _get_ship(ship_name):
         ship = self.ship_template.new(self.bag.board, self.bag.processing, self.bag.timers, self.bag.cache)
 
     ship.reset()
+    ship.die_on_collision = true
     return ship

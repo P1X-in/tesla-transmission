@@ -9,6 +9,8 @@ var shot_spawn_offset = Vector3(0, 0, -1.5)
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
 var shooting = false
+var die_on_collision = false
+var enemy
 
 func _init(board, processing, timers, cache).(board, processing):
     self.avatar = preload("res://scenes/player.tscn").instance()
@@ -43,6 +45,9 @@ func process(delta):
     if self.shooting:
         self.spawn_shot()
 
+    if self.collision != null and self.die_on_collision:
+        return
+
 func _get_shot_instance():
     var object = self.cache.request(self.shot_template_name)
 
@@ -59,3 +64,5 @@ func reset():
     self.shooting = false
     self.shot_on_cooldown = false
     self.shot_cooldown = 0.1
+    self.die_on_collision = false
+    self.enemy = null

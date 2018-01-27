@@ -14,6 +14,8 @@ func _init(processing, players, enemies, ship, path):
     self.ship = ship
     self.path = path
 
+    self.ship.enemy = self
+
 func process(delta):
     var objective = self._get_objective_for_this_tick()
     self._head_towards_objective(objective)
