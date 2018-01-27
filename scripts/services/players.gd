@@ -7,6 +7,8 @@ var ship_template = preload("res://scripts/entities/ship.gd")
 
 var players = []
 
+var default_ship_type = 'ship'
+
 func _initialize():
     self._build_players()
     self._bind_players()
@@ -20,9 +22,18 @@ func _bind_player(player):
 
 func _build_player(index):
     var player = self.player_template.new()
-    player.use_ship(self.ship_template.new(self.bag.board, self.bag.processing, self.bag.timers, self.bag.cache))
+
+    player.use_ship(self._get_ship(self.default_ship_type))
 
     return player
+
+func _get_ship(ship_name):
+    var ship = self.bag.cache.request(ship_name)
+
+    if ship == null:
+        ship = self.ship_template.new(self.bag.board, self.bag.processing, self.bag.timers, self.bag.cache)
+
+    return ship
 
 func _build_players():
     var i

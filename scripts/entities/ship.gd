@@ -20,6 +20,9 @@ func _init(board, processing, timers, cache).(board, processing):
     self.position_constraint_negative = Vector3(-10, 0.5, 0)
     self.constrain_position = true
 
+    self.free_avatar = false
+    self.type_name = 'ship'
+
 func spawn_shot():
     if self.shot_on_cooldown:
         return
@@ -47,3 +50,7 @@ func _get_shot_instance():
         return object
 
     return self.shot_template.new(self.board, self.processing, self.cache)
+
+func despawn():
+    .despawn()
+    self.cache.store_instance(self.type_name, self)
