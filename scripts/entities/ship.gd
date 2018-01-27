@@ -8,10 +8,16 @@ var shot_template_name = 'laser'
 var enemy_shot_template = preload("res://scripts/entities/red_laser.gd")
 var enemy_shot_template_name = 'laser_red'
 
+var tesla_shot_template = preload("res://scripts/entities/tesla_shot.gd")
+var tesla_shot_template_name = 'tesla_shot'
+var tesla_cooldown = 10
+var tesla_on_cooldown = false
+
 var shot_spawn_offset = Vector3(0, 0, -2.5)
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
 var shooting = false
+var tesla_shooting = false
 var die_on_collision = false
 var enemy
 var player
@@ -58,14 +64,32 @@ func spawn_shot():
     self.shot_on_cooldown = true
     self.timers.set_timeout(self.shot_cooldown, self, "remove_cooldown")
 
+func spawn_tesla_shot():
+    if self.tesla_on_cooldown:
+        return
+
+    var shot = self._get_tesla_shot_instance()
+    var position = self.get_pos() + self.shot_spawn_offset
+
+    shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
+    shot.spawn(position)
+    self.tesla_on_cooldown = true
+    self.timers.set_timeout(self.tesla_cooldown, self, "remove_tesla_cooldown")
+
 func remove_cooldown():
     self.shot_on_cooldown = false
+
+func remove_tesla_cooldown():
+    self.tesla_on_cooldown = false
 
 func process(delta):
     .process(delta)
 
     if self.shooting:
         self.spawn_shot()
+
+    if self.tesla_shooting:
+        self.spawn_tesla_shot()
 
     if self.enemy != null and self.collision != null and self.die_on_collision:
         self.enemy.despawn()
@@ -89,6 +113,17 @@ func _get_shot_instance():
 
     return object
 
+func _get_tesla_shot_instance():
+    var object = self.cache.request(self.tesla_shot_template_name)
+
+    if object != null:
+        object.reset()
+        return object
+
+    object = self.tesla_shot_template.new(self.board, self.processing, self.cache)
+
+    return object
+
 func despawn():
     .despawn()
     self.cache.store_instance(self.type_name, self)
@@ -96,7 +131,9 @@ func despawn():
 func reset():
     .reset()
     self.shooting = false
+    self.tesla_shooting = false
     self.shot_on_cooldown = false
+    self.tesla_cooldown = false
     self.shot_cooldown = 0.1
     self.die_on_collision = false
     self.constrain_position = true

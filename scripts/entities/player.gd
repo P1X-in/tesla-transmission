@@ -36,12 +36,20 @@ func _bind_keyboard_left_side(input):
 
     input.register_handler('game', input.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/shoot_keyboard.gd").new(self, KEY_V))
 
+    input.register_handler('game', input.DEVICE_KEYBOARD, preload("res://scripts/input/handlers/tesla_keyboard.gd").new(self, KEY_C))
+
 
 func set_shooting(shooting):
     if not self.is_active():
         return
 
     self.ship.shooting = shooting
+
+func set_tesla_shooting(shooting):
+    if not self.is_active():
+        return
+
+    self.ship.tesla_shooting = shooting
 
 func get_position_for_enemy():
     if not self.is_active():
