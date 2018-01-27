@@ -38,7 +38,7 @@ size_flags_vertical = 1
 theme = ExtResource( 1 )
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
-[node name="buttons" type="VBoxContainer" parent="center" index="0"]
+[node name="main" type="VBoxContainer" parent="center" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -57,7 +57,7 @@ custom_constants/separation = 14
 alignment = 0
 _sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
 
-[node name="start_game" type="Button" parent="center/buttons" index="0"]
+[node name="start_game" type="Button" parent="center/main" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -79,7 +79,7 @@ text = "START GAME"
 flat = false
 align = 1
 
-[node name="settings" type="Button" parent="center/buttons" index="1"]
+[node name="settings" type="Button" parent="center/main" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -102,7 +102,7 @@ text = "SETTINGS"
 flat = false
 align = 1
 
-[node name="quit" type="Button" parent="center/buttons" index="2"]
+[node name="quit" type="Button" parent="center/main" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -122,6 +122,184 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "QUIT"
+flat = false
+align = 1
+
+[node name="start_game" type="VBoxContainer" parent="center" index="1"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 14
+alignment = 0
+_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
+
+[node name="one_player" type="Button" parent="center/start_game" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 272.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "SINGLE PLAYER"
+flat = false
+align = 1
+
+[node name="two_players" type="Button" parent="center/start_game" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 30.0
+margin_right = 272.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "TWO PLAYERS"
+flat = false
+align = 1
+
+[node name="back" type="Button" parent="center/start_game" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 60.0
+margin_right = 272.0
+margin_bottom = 76.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BACK"
+flat = false
+align = 1
+
+[node name="settings" type="VBoxContainer" parent="center" index="2"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = -24.0
+margin_bottom = -24.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 14
+alignment = 0
+_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
+
+[node name="one_player" type="Button" parent="center/settings" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 272.0
+margin_bottom = 16.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "SOUND ON"
+flat = false
+align = 1
+
+[node name="two_players" type="Button" parent="center/settings" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 30.0
+margin_right = 272.0
+margin_bottom = 46.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "MUSIC OFF"
+flat = false
+align = 1
+
+[node name="back" type="Button" parent="center/settings" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 60.0
+margin_right = 272.0
+margin_bottom = 76.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "BACK"
 flat = false
 align = 1
 
