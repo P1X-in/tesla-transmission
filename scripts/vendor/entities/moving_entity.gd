@@ -26,7 +26,6 @@ func reset_movement():
 func process(delta):
     self._modify_position(delta)
     self._constrain_position()
-    print(self.get_pos())
 
 func _modify_position(delta):
     var motion
