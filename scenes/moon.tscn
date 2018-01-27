@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://materials/moon.tres" type="Material" id=1]
 
@@ -10,9 +10,28 @@ radial_segments = 16
 rings = 24
 is_hemisphere = false
 
-[node name="moon" type="MeshInstance"]
+[sub_resource type="Animation" id=2]
 
-transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, -96 )
+resource_name = "idle"
+length = 5.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="moon" type="MeshInstance" index="0"]
+
+transform = Transform( 52.1546, 0, 37.0931, 0, 64, 0, -37.0931, 0, 52.1546, 0, 0, -96 )
 layers = 1
 material_override = ExtResource( 1 )
 cast_shadow = 1
@@ -26,5 +45,17 @@ mesh = SubResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Geometry", "LOD", "Transform", "material" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+
+root_node = NodePath("..")
+autoplay = "idle"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 0.03
+anims/idle = SubResource( 2 )
+blend_times = [  ]
+autoplay = "idle"
+_sections_unfolded = [ "Playback Options" ]
 
 

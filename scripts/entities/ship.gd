@@ -12,7 +12,7 @@ func _init(board, processing, timers).(board, processing):
     self.avatar = preload("res://scenes/player.tscn").instance()
     self.timers = timers
 
-    self.velocity = 5
+    self.velocity = 15
     self.position_constraint_positive = Vector3(10, 11, 0)
     self.position_constraint_negative = Vector3(-10, 0.5, 0)
     self.constrain_position = true
