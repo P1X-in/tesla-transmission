@@ -70,7 +70,7 @@ transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 64, -116.061, 73.5896, -331.563
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="3"]
 
-transform = Transform( 0.857812, 0.104307, -0.503268, 0.383689, 0.521544, 0.762086, 0.341968, -0.846824, 0.407365, 5.70959, 0.239865, 0.890096 )
+transform = Transform( 0.857812, 0.104307, -0.503268, 0.383689, 0.521544, 0.762086, 0.341968, -0.846824, 0.407365, 699.475, 0.239865, 0.890096 )
 layers = 1
 light_color = Color( 1, 1, 1, 1 )
 light_energy = 1.0
@@ -92,12 +92,12 @@ directional_shadow_split_3 = 0.5
 directional_shadow_blend_splits = false
 directional_shadow_normal_bias = 0.8
 directional_shadow_bias_split_scale = 0.25
-directional_shadow_depth_range = 1
-directional_shadow_max_distance = 200.0
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 300.0
 _sections_unfolded = [ "Directional Shadow", "Light", "Shadow", "Transform" ]
 
 [node name="Particles" parent="." index="4" instance=ExtResource( 4 )]
 
-transform = Transform( 12, -2.09736e-06, -4.06036e-08, 2.0948e-06, 11.9932, -0.404699, 1.11314e-07, 0.404699, 11.9932, -0.294629, 0, -430.745 )
+transform = Transform( 16, -2.79648e-06, -5.41385e-08, 2.79307e-06, 15.9909, -0.539597, 1.48419e-07, 0.539597, 15.9909, -0.429456, 4.10488, -409.179 )
 
 

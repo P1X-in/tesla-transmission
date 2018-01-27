@@ -5,7 +5,7 @@
 min_value = -200.0
 max_value = 200.0
 bake_resolution = 100
-_data = [ Vector2( 0.0115448, -11.7489 ), 0.0, 0.0, 0, 0, Vector2( 1, 200 ), 0.0, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.996728, 200 ), 495.359, 0.0, 0, 0 ]
 
 [sub_resource type="CurveTexture" id=2]
 
@@ -24,7 +24,7 @@ flag_disable_z = false
 spread = 90.0
 flatness = 0.3
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 4.0
+initial_velocity = 2.0
 initial_velocity_random = 0.0
 angular_velocity = 0.0
 angular_velocity_random = 0.0
@@ -49,7 +49,7 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Hue Variation" ]
+_sections_unfolded = [ "Initial Velocity", "Linear Accel" ]
 
 [sub_resource type="SpatialMaterial" id=4]
 
@@ -62,7 +62,7 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
+vertex_color_use_as_albedo = true
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
 params_specular_mode = 0
@@ -80,7 +80,11 @@ metallic_specular = 0.5
 metallic_texture_channel = 0
 roughness = 0.0
 roughness_texture_channel = 0
-emission_enabled = false
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
 normal_enabled = false
 rim_enabled = false
 clearcoat_enabled = false
@@ -101,7 +105,7 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Emission" ]
+_sections_unfolded = [ "Emission", "Vertex Color" ]
 
 [sub_resource type="CubeMesh" id=5]
 
@@ -124,7 +128,7 @@ lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 emitting = true
-amount = 32
+amount = 64
 lifetime = 1.0
 one_shot = false
 preprocess = 0.0
