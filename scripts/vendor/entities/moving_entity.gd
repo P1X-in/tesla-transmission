@@ -5,8 +5,8 @@ var processing
 var velocity
 var movement_vector = Vector3(0, 0, 0)
 
-var position_constraint_positive = Vector3(2, 4, 0)
-var position_constraint_negative = Vector3(-2, 1, 0)
+var position_constraint_positive = Vector3(0, 0, 0)
+var position_constraint_negative = Vector3(0, 0, 0)
 var constrain_position = false
 
 func _init(board, processing).(board):
@@ -26,6 +26,7 @@ func reset_movement():
 func process(delta):
     self._modify_position(delta)
     self._constrain_position()
+    print(self.get_pos())
 
 func _modify_position(delta):
     var motion
