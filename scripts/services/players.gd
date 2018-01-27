@@ -29,3 +29,14 @@ func _build_players():
 
     for i in range(self.PLAYER_COUNT):
         self.players.append(self._build_player(i))
+
+func get_positions():
+    var positions = []
+    var position
+
+    for player in players:
+        position = player.get_position_for_enemy()
+        if position != null:
+            positions.append(position)
+
+    return positions

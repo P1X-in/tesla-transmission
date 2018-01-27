@@ -2,6 +2,7 @@
 var ship = null
 
 var is_in_game = false
+var is_alive = true
 
 func use_ship(ship):
     self.ship = ship
@@ -18,6 +19,7 @@ func enter_game():
 
 func reset():
     self.is_in_game = false
+    self.is_alive = true
 
 
 func _bind_keyboard_left_side(input):
@@ -33,7 +35,13 @@ func _bind_keyboard_left_side(input):
 
 
 func set_shooting(shooting):
-    if self.ship == null or not self.is_in_game:
+    if self.ship == null or not self.is_in_game or not self.is_alive:
         return
 
     self.ship.shooting = shooting
+
+func get_position_for_enemy():
+    if self.ship == null or not self.is_in_game or not self.is_alive:
+        return null
+
+    return self.ship.get_pos()

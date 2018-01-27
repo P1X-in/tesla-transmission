@@ -3,7 +3,7 @@ extends "res://scripts/vendor/entities/moving_entity.gd"
 var timers
 
 var shot_template = preload("res://scripts/entities/shot.gd")
-var shot_spawn_offset = Vector3(0, 0, -3)
+var shot_spawn_offset = Vector3(0, 0, -1.5)
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
 var shooting = false

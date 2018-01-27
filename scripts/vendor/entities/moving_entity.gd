@@ -30,8 +30,8 @@ func process(delta):
 func _modify_position(delta):
     var motion
 
-    motion = self.movement_vector * self.velocity
-    self.avatar.move_and_slide(motion)
+    motion = self.movement_vector * self.velocity * delta
+    self.avatar.move_and_collide(motion)
 
 func _constrain_position():
     if not self.constrain_position:
