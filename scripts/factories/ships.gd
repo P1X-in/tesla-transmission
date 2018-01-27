@@ -30,6 +30,13 @@ func _build_new_ship(type):
         return null
 
     ship = self.ship_templates[type].new(self.bag.board, self.bag.processing, self.bag.timers, self.bag.cache)
+    ship.shots_factory = self.bag.shots_factory
 
     return ship
 
+func preload():
+    var ship
+    for type in self.ship_templates:
+        ship = self.get(type)
+        ship.attach()
+        ship.detach()

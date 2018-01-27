@@ -2,13 +2,11 @@ extends "res://scripts/vendor/entities/moving_entity.gd"
 
 var timers
 var cache
+var shots_factory
 
-var shot_template = preload("res://scripts/entities/shot.gd")
 var shot_template_name = 'laser'
-var enemy_shot_template = preload("res://scripts/entities/red_laser.gd")
 var enemy_shot_template_name = 'laser_red'
 
-var tesla_shot_template = preload("res://scripts/entities/tesla_shot.gd")
 var tesla_shot_template_name = 'tesla_shot'
 var tesla_cooldown = 0.4
 var tesla_on_cooldown = false
@@ -103,29 +101,14 @@ func _get_shot_instance():
     var object
 
     if self.enemy != null:
-        object = self.cache.request(self.enemy_shot_template_name)
+        object = self.shots_factory.get(self.enemy_shot_template_name)
     else:
-        object = self.cache.request(self.shot_template_name)
-
-    if object != null:
-        object.reset()
-        return object
-
-    if self.enemy != null:
-        object = self.enemy_shot_template.new(self.board, self.processing, self.cache)
-    else:
-        object = self.shot_template.new(self.board, self.processing, self.cache)
+        object = self.shots_factory.get(self.shot_template_name)
 
     return object
 
 func _get_tesla_shot_instance():
-    var object = self.cache.request(self.tesla_shot_template_name)
-
-    if object != null:
-        object.reset()
-        return object
-
-    object = self.tesla_shot_template.new(self.board, self.processing, self.cache)
+    var object = self.shots_factory.get(self.tesla_shot_template_name)
 
     return object
 
