@@ -13,7 +13,7 @@ var die_on_collision = false
 var enemy
 
 func _init(board, processing, timers, cache).(board, processing):
-    self.avatar = preload("res://scenes/player.tscn").instance()
+    self.avatar = preload("res://scenes/ship1.tscn").instance()
     self.timers = timers
     self.cache = cache
 

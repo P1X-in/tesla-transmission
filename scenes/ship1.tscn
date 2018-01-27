@@ -8,7 +8,7 @@
 radius = 1.1063
 height = 1.0
 
-[node name="player" type="KinematicBody"]
+[node name="ship1" type="KinematicBody"]
 
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 input_ray_pickable = true
