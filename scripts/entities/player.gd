@@ -1,6 +1,7 @@
 
 var ship = null
 var director
+var players
 
 var is_in_game = false
 var is_alive = true
@@ -62,3 +63,6 @@ func is_active():
         return false
 
     return true
+
+func swap_ship(name):
+    self.players.swap_ship_for_player(self, name)

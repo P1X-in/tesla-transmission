@@ -2,7 +2,12 @@ extends "res://scripts/vendor/bag_aware.gd"
 
 var ship_templates = {
     'avalon' : preload("res://scripts/entities/ships/avalon.gd"),
-    'icarus' : preload("res://scripts/entities/ships/icarus.gd")
+    'icarus' : preload("res://scripts/entities/ships/icarus.gd"),
+    'basilisk' : preload("res://scripts/entities/ships/basilisk.gd"),
+    'bigboy' : preload("res://scripts/entities/ships/bigboy.gd"),
+    'leviathan' : preload("res://scripts/entities/ships/leviathan.gd"),
+    'scorpion' : preload("res://scripts/entities/ships/scorpion.gd"),
+    'sulaco' : preload("res://scripts/entities/ships/sulaco.gd"),
 }
 
 func get(type):

@@ -10,10 +10,10 @@ var enemy_shot_template_name = 'laser_red'
 
 var tesla_shot_template = preload("res://scripts/entities/tesla_shot.gd")
 var tesla_shot_template_name = 'tesla_shot'
-var tesla_cooldown = 10
+var tesla_cooldown = 0.4
 var tesla_on_cooldown = false
 
-var shot_spawn_offset = Vector3(0, 0, -2.5)
+var shot_spawn_offset = Vector3(0, 0, -3.5)
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
 var shooting = false
@@ -73,11 +73,14 @@ func spawn_tesla_shot():
 
     shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
     shot.spawn(position)
-    self.tesla_on_cooldown = true
-    self.timers.set_timeout(self.tesla_cooldown, self, "remove_tesla_cooldown")
+    self.put_tesla_on_cooldown()
 
 func remove_cooldown():
     self.shot_on_cooldown = false
+
+func put_tesla_on_cooldown():
+    self.tesla_on_cooldown = true
+    self.timers.set_timeout(self.tesla_cooldown, self, "remove_tesla_cooldown")
 
 func remove_tesla_cooldown():
     self.tesla_on_cooldown = false

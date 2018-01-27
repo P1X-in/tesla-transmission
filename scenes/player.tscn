@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://models/ship1.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://materials/ship_material.tres" type="Material" id=2]
+[ext_resource path="res://scripts/entities/ship_name.gd" type="Script" id=1]
+[ext_resource path="res://models/ship1.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://materials/ship_material.tres" type="Material" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 
 radius = 1.1063
 height = 1.0
 
-[node name="player" type="KinematicBody"]
+[node name="player" type="KinematicBody" index="0"]
 
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 input_ray_pickable = true
@@ -22,7 +23,9 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
+script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
+ship_name = ""
 
 [node name="collision" type="CollisionShape" parent="." index="0"]
 
@@ -41,10 +44,10 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = ExtResource( 1 )
+mesh = ExtResource( 2 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 2 )
-material/1 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 3 )
 _sections_unfolded = [ "material" ]
 
 

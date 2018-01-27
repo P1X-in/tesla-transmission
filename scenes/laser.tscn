@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/entities/ship_name.gd" type="Script" id=1]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -80,7 +82,9 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
+script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+ship_name = ""
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 

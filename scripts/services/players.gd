@@ -23,6 +23,7 @@ func _bind_player(player):
 func _build_player(index):
     var player = self.player_template.new()
     player.director = self.bag.director
+    player.players = self
 
     player.use_ship(self._get_ship(self.default_ship_type))
 
@@ -47,3 +48,13 @@ func get_positions():
             positions.append(position)
 
     return positions
+
+func swap_ship_for_player(player, ship_name):
+    var new_ship = self._get_ship(ship_name)
+    var old_ship = player.ship
+    var position = old_ship.get_pos()
+
+    player.use_ship(new_ship)
+    old_ship.despawn()
+    new_ship.spawn(position)
+

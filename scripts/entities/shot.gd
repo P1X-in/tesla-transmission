@@ -21,13 +21,20 @@ func reverse():
     .reverse()
     self.movement_vector = Vector3(0, 0, 1)
 
+func despawn():
+    .despawn()
+    self.cache.store_instance(self.type_name, self)
+
 func process(delta):
     .process(delta)
+
+    if self.collision != null:
+        self.despawn()
+        return
 
     var position = self.get_pos()
     if position.z < self.dead_end_position or position.z > self.front_end_position:
         self.despawn()
-        self.cache.store_instance(self.type_name, self)
 
 func set_collisions(layer, mask):
     self.avatar.set_collision_layer(layer)

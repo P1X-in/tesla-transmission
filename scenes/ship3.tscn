@@ -5,6 +5,8 @@
 
 [node name="ship3" index="0" instance=ExtResource( 1 )]
 
+ship_name = "icarus"
+
 [node name="collision" parent="." index="0"]
 
 transform = Transform( -1.8816e-07, 0, 1.34556, 0, 1, 0, -1.15492, 0, -2.1922e-07, 0, 0, 0 )
