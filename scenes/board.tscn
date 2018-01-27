@@ -13,7 +13,6 @@ environment = ExtResource( 1 )
 
 [node name="Cinematic" type="Camera" parent="." index="1"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 12 )
 keep_aspect = 1
 cull_mask = 1048575
@@ -46,8 +45,8 @@ offset = Vector2( 0, 0 )
 flip_h = false
 flip_v = false
 modulate = Color( 1, 1, 1, 1 )
-opacity = 0.4
-pixel_size = 0.01
+opacity = 0.1
+pixel_size = 0.005
 axis = 2
 transparent = true
 shaded = false
