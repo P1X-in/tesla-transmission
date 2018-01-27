@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://models/lowpoly_ship3.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://materials/green_material.tres" type="Material" id=3]
+[ext_resource path="res://materials/red_material.tres" type="Material" id=4]
+[ext_resource path="res://materials/white_material.tres" type="Material" id=5]
+
+[node name="lowpoly_ship3" index="0" instance=ExtResource( 1 )]
+
+ship_name = "ship3"
+
+[node name="MeshInstance" parent="." index="1"]
+
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 3 )
+material/2 = ExtResource( 3 )
+material/3 = ExtResource( 3 )
+material/4 = ExtResource( 4 )
+material/5 = ExtResource( 5 )
+_sections_unfolded = [ "LOD", "Transform", "material" ]
+
+

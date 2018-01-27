@@ -8,6 +8,9 @@ var ship_templates = {
     'leviathan' : preload("res://scripts/entities/ships/leviathan.gd"),
     'scorpion' : preload("res://scripts/entities/ships/scorpion.gd"),
     'sulaco' : preload("res://scripts/entities/ships/sulaco.gd"),
+    'ship2' : preload("res://scripts/entities/ships/ship2.gd"),
+    'ship3' : preload("res://scripts/entities/ships/ship3.gd"),
+    'ship4' : preload("res://scripts/entities/ships/ship4.gd"),
 }
 
 func get(type):

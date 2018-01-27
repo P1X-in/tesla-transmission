@@ -23,7 +23,7 @@ var enemy
 var player
 
 func _init(board, processing, timers, cache).(board, processing):
-    self.avatar = preload("res://scenes/ship1.tscn").instance()
+    self.avatar = preload("res://scenes/lowpoly_ship2.tscn").instance()
     self.timers = timers
     self.cache = cache
 
