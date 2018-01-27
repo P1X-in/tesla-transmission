@@ -1,9 +1,8 @@
 extends "res://scripts/vendor/bag_aware.gd"
 
-const PLAYER_COUNT = 1
+const PLAYER_COUNT = 2
 
 var player_template = preload("res://scripts/entities/player.gd")
-var ship_template = preload("res://scripts/entities/ship.gd")
 
 var players = []
 
@@ -21,7 +20,7 @@ func _bind_player(player):
     player.bind_controls(self.bag.input)
 
 func _build_player(index):
-    var player = self.player_template.new()
+    var player = self.player_template.new(index)
     player.director = self.bag.director
     player.players = self
 

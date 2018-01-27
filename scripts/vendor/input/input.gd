@@ -1,10 +1,12 @@
 extends "res://scripts/vendor/bag_aware.gd"
 
 const DEVICE_KEYBOARD = 'keyboard'
-const DEVICE_GAMEPAD = 'keyboard'
+const DEVICE_GAMEPAD = 'gamepad'
 const DEVICE_MOUSE = 'mouse'
 const DEVICE_ARCADE = 'arcade'
 const DEVICE_ANY = 'any'
+
+const DEBUG = false
 
 
 var keyboard_template = preload("res://scripts/vendor/input/keyboard.gd")
@@ -26,6 +28,9 @@ func _initialize():
     self.bag.root.set_process_input(true)
 
 func handle_event(event):
+    if self.DEBUG:
+        print(event)
+
     for device in self.schemes[self.active_scheme]:
         if self.schemes[self.active_scheme][device].can_handle(event):
             self.schemes[self.active_scheme][device].handle_event(event)
@@ -55,11 +60,17 @@ func register_device(scheme, device, device_id=0):
     elif device == self.DEVICE_ANY:
         device_instance = self.any_device_template.new()
 
+    if device == self.DEVICE_GAMEPAD:
+        device = self.DEVICE_GAMEPAD + str(device_id)
+
     if not self.schemes[scheme].has(device) and device_instance != null:
         self.schemes[scheme][device] = device_instance
 
 
-func register_handler(scheme, device, handler):
+func register_handler(scheme, device, handler, device_id=0):
+    if device == self.DEVICE_GAMEPAD:
+        device = self.DEVICE_GAMEPAD + str(device_id)
+
     self.schemes[scheme][device].register_handler(handler)
 
 
