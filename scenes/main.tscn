@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/bootstrap.gd" type="Script" id=1]
 [ext_resource path="res://scenes/intro.tscn" type="PackedScene" id=2]
 
-[node name="tesla" type="Node" index="0"]
+[node name="tesla" type="Node"]
 
 script = ExtResource( 1 )
 
