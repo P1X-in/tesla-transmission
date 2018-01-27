@@ -27,6 +27,12 @@ func process(delta):
         self.despawn()
         self.cache.store_instance(self.type_name, self)
 
+func set_collisions(layer, mask):
+    self.avatar.set_collision_layer(layer)
+    self.avatar.set_collision_mask(mask)
+
 func reset():
     .reset()
     self.movement_vector = Vector3(0, 0, -1)
+    self.avatar.set_collision_layer(1)
+    self.avatar.set_collision_mask(1)

@@ -4,31 +4,31 @@ func _init(altitude):
     self.initial_position = Vector3(300, altitude, -60)
 
     self.path['waypoint1'] = {
-        'target' : Vector3(30, altitude, -50),
+        'target' : Vector3(40, altitude, -50),
         'speed' : 50,
         'shooting' : false,
         'despawn' : false,
-        'threshold' : 0.1,
+        'threshold' : 0.5,
         'shot_cooldown' : 2,
         'next' : 'waypoint2'
     }
 
     self.path['waypoint2'] = {
-        'target' : Vector3(20, altitude, -45),
+        'target' : Vector3(20, altitude, -40),
         'speed' : 25,
         'shooting' : true,
         'despawn' : false,
-        'threshold' : 0.1,
+        'threshold' : 0.5,
         'shot_cooldown' : 2,
         'next' : 'waypoint3'
     }
 
     self.path['waypoint3'] = {
-        'target' : Vector3(10, altitude, -35),
+        'target' : Vector3(10, altitude, -30),
         'speed' : 25,
         'shooting' : true,
         'despawn' : false,
-        'threshold' : 0.1,
+        'threshold' : 0.5,
         'shot_cooldown' : 2,
         'next' : 'waypoint4'
     }
@@ -37,7 +37,7 @@ func _init(altitude):
         'speed' : 25,
         'shooting' : true,
         'despawn' : false,
-        'threshold' : 0.1,
+        'threshold' : 0.5,
         'shot_cooldown' : 2,
         'next' : 'waypoint5'
     }
@@ -47,7 +47,7 @@ func _init(altitude):
         'speed' : 25,
         'shooting' : true,
         'despawn' : false,
-        'threshold' : 0.1,
+        'threshold' : 0.5,
         'shot_cooldown' : 2,
         'next' : 'waypoint6'
     }
@@ -57,7 +57,7 @@ func _init(altitude):
         'speed' : 25,
         'shooting' : false,
         'despawn' : true,
-        'threshold' : 0.1,
+        'threshold' : 0.5,
         'shot_cooldown' : 2,
         'next' : null
     }

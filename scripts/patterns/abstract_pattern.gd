@@ -8,6 +8,8 @@ var iterator
 
 var pattern_name
 
+var reversed_x = false
+
 func _init(timers, enemies, factory):
     self.timers = timers
     self.enemies = enemies
@@ -49,8 +51,11 @@ func _perform_step(iteration):
     enemy.spawn()
 
 func _get_path(type, params):
-    return self.factory.get(type, params)
+    var path = self.factory.get(type, params)
+    path.reversed_x = self.reversed_x
+    return path
 
 func reset():
     self.pattern = []
     self.iterator = 0
+    self.reversed_x = false

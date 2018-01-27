@@ -28,7 +28,8 @@ var waves = [
         'type' : 'side_front_wave',
         'params' : {
             'altitude' : 8,
-            'amount' : 5
+            'amount' : 5,
+            'reversed' : true
         },
         'delay' : 3
     },

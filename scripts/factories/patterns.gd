@@ -19,6 +19,9 @@ func _get_pattern(type, params):
         pattern.reset()
         pattern.apply(params)
 
+    if params.has('reversed'):
+        pattern.reversed_x = params['reversed']
+
     return pattern
 
 func _build_new_pattern(type, params):

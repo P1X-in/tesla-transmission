@@ -26,6 +26,14 @@ func _init(board, processing, timers, cache).(board, processing):
     self.type_name = 'ship'
     self.default_rotation = 90
 
+func set_player_collisions():
+    self.avatar.set_collision_layer(1)
+    self.avatar.set_collision_mask(1)
+
+func set_enemy_collisions():
+    self.avatar.set_collision_layer(0)
+    self.avatar.set_collision_mask(1)
+
 func reverse():
     .reverse()
     self.shot_spawn_offset.z = -self.shot_spawn_offset.z
@@ -41,6 +49,7 @@ func spawn_shot():
     if self.reversed:
         shot.reverse()
 
+    shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
     shot.spawn(position)
     self.shot_on_cooldown = true
     self.timers.set_timeout(self.shot_cooldown, self, "remove_cooldown")
@@ -79,3 +88,5 @@ func reset():
     self.constrain_position = true
     self.enemy = null
     self.shot_spawn_offset = Vector3(0, 0, -2.5)
+    self.avatar.set_collision_layer(1)
+    self.avatar.set_collision_mask(1)
