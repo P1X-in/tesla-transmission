@@ -1,11 +1,11 @@
 extends "res://scripts/vendor/input/handlers/keyboard_handler.gd"
 
-var bag
+var ship
 
-func _init(bag):
+func _init(ship):
     self.scancode = KEY_D
-    self.bag = bag
+    self.ship = ship
 
 func handle(event):
     if event.is_pressed():
-        self.bag.players.player1.ship.move_right()
+        self.ship.move_right()
