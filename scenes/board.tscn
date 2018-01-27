@@ -100,4 +100,6 @@ _sections_unfolded = [ "Directional Shadow", "Light", "Shadow", "Transform" ]
 
 [node name="player" parent="." index="4" instance=ExtResource( 4 )]
 
+transform = Transform( 0.504921, 0, 0.863165, 0, 1, 0, -0.863165, 0, 0.504921, 0.070019, 0.306324, -0.152438 )
+
 

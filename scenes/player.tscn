@@ -1,20 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://materials/player_material.tres" type="Material" id=1]
+[ext_resource path="res://models/ship_1.obj" type="ArrayMesh" id=1]
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=1]
 
 radius = 1.0
 height = 1.0
 
-[sub_resource type="CubeMesh" id=1]
-
-size = Vector3( 2, 2, 2 )
-subdivide_width = 0
-subdivide_height = 0
-subdivide_depth = 0
-
-[node name="player" type="KinematicBody" index="0"]
+[node name="player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -31,12 +24,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="collision" type="CollisionShape" parent="." index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 disabled = false
 
-[node name="box" type="MeshInstance" parent="." index="1"]
+[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 0.5, 0, 0, 0, 0.3, 0, 0, 0, 1.4, 0, 0.760547, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -46,60 +38,11 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
+mesh = ExtResource( 1 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="box3" type="MeshInstance" parent="." index="2"]
-
-transform = Transform( 0.25, 0, 0, 0, 0.1, 0, 0, 0, 0.2, 0, 0.760547, -1.86588 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
-skeleton = NodePath("..")
-material/0 = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="box2" type="MeshInstance" parent="." index="3"]
-
-transform = Transform( 2, 0, 0, 0, 0.0490488, 0.0582394, 0, -0.00970657, 0.294293, -0.00971937, 0.732369, -0.896696 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
-skeleton = NodePath("..")
-material/0 = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "material" ]
-
-[node name="box4" type="MeshInstance" parent="." index="4"]
-
-transform = Transform( 1, 0, 0, 0, 0.0483781, 0.0757908, 0, -0.0126318, 0.290268, -0.00971937, 0.884512, 1.54176 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
-skeleton = NodePath("..")
-material/0 = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "material" ]
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
 
 
