@@ -12,16 +12,28 @@ var waves = [
             'altitude' : 2,
             'amount' : 3
         },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 2,
+            'amount' : 10
+        },
         'delay' : 3
     },
 ]
 
 
 func _initialize(timers, factory):
-    self.tiemrs = timers
+    self.timers = timers
     self.patterns_factory = factory
 
 func start():
+    if self.started:
+        return
+
     self.started = true
     self.iterator = 0
 
@@ -36,7 +48,7 @@ func _perform_next_wave():
         return
 
     self._perofrm_wave()
-    var delay = self.pattern[self.iterator]['delay']
+    var delay = self.waves[self.iterator]['delay']
     self.iterator += 1
 
     self.timers.set_timeout(delay, self, '_perform_next_wave')

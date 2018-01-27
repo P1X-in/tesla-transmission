@@ -22,6 +22,7 @@ func _bind_player(player):
 
 func _build_player(index):
     var player = self.player_template.new()
+    player.director = self.bag.director
 
     player.use_ship(self._get_ship(self.default_ship_type))
 

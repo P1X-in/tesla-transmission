@@ -45,8 +45,8 @@ func process(delta):
     if self.shooting:
         self.spawn_shot()
 
-    if self.collision != null and self.die_on_collision:
-        return
+    if self.enemy != null and self.collision != null and self.die_on_collision:
+        self.enemy.despawn()
 
 func _get_shot_instance():
     var object = self.cache.request(self.shot_template_name)
@@ -65,4 +65,5 @@ func reset():
     self.shot_on_cooldown = false
     self.shot_cooldown = 0.1
     self.die_on_collision = false
+    self.constrain_position = true
     self.enemy = null

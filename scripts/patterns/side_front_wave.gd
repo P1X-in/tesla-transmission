@@ -7,9 +7,16 @@ func _init(timers, enemies, cache, altitude, amount).(timers, enemies, cache):
     self.altitude = altitude
     self.amount = amount
 
-    self._generate_wave()
+    self.generate_waves()
 
-func _generate_wave():
+
+func apply(params):
+    self.altitude = params['altitude']
+    self.amount = params['amount']
+
+    self.generate_waves()
+
+func generate_waves():
     for i in range(self.amount):
         self.pattern.append(self._generate_step())
 
@@ -17,7 +24,7 @@ func _generate_step():
     return {
         'path_type' : 'side_front_curve',
         'ship_type' : 'ship',
-        'timeout' : 0.5
+        'timeout' : 0.5,
         'path_params' : {
             'altitude' : self.altitude
         }

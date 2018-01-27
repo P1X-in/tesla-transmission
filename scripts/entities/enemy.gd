@@ -25,6 +25,7 @@ func spawn():
     self.ship.spawn(self.path.get_initial_position())
 
 func despawn():
+    self.enemies.unregister_enemy(self)
     self.processing.remove(self)
     self.ship.despawn()
 

@@ -1,5 +1,6 @@
 
 var ship = null
+var director
 
 var is_in_game = false
 var is_alive = true
@@ -16,6 +17,7 @@ func enter_game():
 
     self.is_in_game = true
     self.ship.spawn(Vector3(0, 2, 0))
+    self.director.start()
 
 func reset():
     self.is_in_game = false

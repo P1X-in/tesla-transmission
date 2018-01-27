@@ -29,4 +29,5 @@ func _get_ship(ship_name):
 
     ship.reset()
     ship.die_on_collision = true
+    ship.constrain_position = false
     return ship

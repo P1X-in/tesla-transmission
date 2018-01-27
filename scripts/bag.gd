@@ -4,6 +4,8 @@ var board = preload("res://scripts/board.gd").new()
 var players = preload("res://scripts/services/players.gd").new()
 var intro = preload("res://scripts/services/intro.gd").new()
 var enemies = preload("res://scripts/services/enemies.gd").new()
+var patterns_factory = preload("res://scripts/factories/patterns.gd").new()
+var paths_factory = preload("res://scripts/factories/paths.gd").new()
 var director = preload("res://scripts/services/director.gd").new()
 
 func _pre_initialize():
@@ -14,4 +16,6 @@ func _initialize():
     self.players._init_bag(self)
     self.intro._init_bag(self)
     self.enemies._init_bag(self)
-    self.director._initialize(self.timers, [])
+    self.patterns_factory._init_bag(self)
+    self.paths_factory._init_bag(self)
+    self.director._initialize(self.timers, self.patterns_factory)

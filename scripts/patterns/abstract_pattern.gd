@@ -18,6 +18,9 @@ func _init(timers, enemies, factory):
 func _initialize():
     return
 
+func apply(params):
+    return
+
 func begin():
     self.iterator = 0
     self.perform_next_step()
