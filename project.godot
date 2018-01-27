@@ -17,6 +17,11 @@ run/custom_user_dir_name=""
 
 [display]
 
-window/size/height=800
+window/size/width=920
+window/size/height=480
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
