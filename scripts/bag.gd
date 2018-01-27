@@ -1,7 +1,6 @@
 extends "res://scripts/vendor/bag.gd"
 
-var test = preload("res://scenes/test.tscn").instance()
-
+var board = preload("res://scripts/board.gd").new()
 var players = preload("res://scripts/services/players.gd").new()
 
 func _pre_initialize():

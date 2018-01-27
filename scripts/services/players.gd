@@ -16,7 +16,7 @@ func _bind_players():
 
 func _bind_player(player):
     player.bind_controls(self.bag.input)
-    player.ship.bind(self.bag.test)
+    player.ship.bind(self.bag.board.mount)
 
 func _build_player(index):
     return self.player_template.new()

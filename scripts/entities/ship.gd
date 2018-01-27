@@ -3,8 +3,8 @@ extends "res://scripts/vendor/entities/moving_entity.gd"
 func _init(board, processing).(board, processing):
     return
 
-func bind(test_scene):
-    self.avatar = test_scene.get_node('player')
+func bind(board):
+    self.avatar = board.get_node('player')
 
 func move_left():
     var translation = self.avatar.get_translation()

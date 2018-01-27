@@ -28,11 +28,11 @@ func despawn():
 
 func attach():
     self.is_processing = true
-    self.board.attach_object(self.avatar)
+    self.board.attach_entity(self.avatar)
 
 func detach():
     self.is_processing = false
-    self.board.detach_object(self.avatar)
+    self.board.detach_entity(self.avatar)
 
 func calculate_distance_to_object(object):
     return self.calculate_distance(object.get_pos())

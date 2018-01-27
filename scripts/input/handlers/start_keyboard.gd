@@ -8,5 +8,5 @@ func _init(bag):
 
 func handle(event):
     if event.is_pressed():
-        self.bag.root.add_child(self.bag.test)
+        self.bag.root.add_child(self.bag.board.scene)
         self.bag.input.switch_to_scheme("game")
