@@ -23,6 +23,9 @@ func get(type):
 func _build_new_ship(type):
     var ship = null
 
+    if not self.ship_templates.has(type):
+        return null
+
     ship = self.ship_templates[type].new(self.bag.board, self.bag.processing, self.bag.timers, self.bag.cache)
 
     return ship

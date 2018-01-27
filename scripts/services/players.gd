@@ -54,6 +54,9 @@ func swap_ship_for_player(player, ship_name):
     var old_ship = player.ship
     var position = old_ship.get_pos()
 
+    if new_ship == null:
+        return
+
     player.use_ship(new_ship)
     old_ship.despawn()
     new_ship.spawn(position)

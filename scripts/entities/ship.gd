@@ -60,6 +60,7 @@ func spawn_shot():
         shot.reverse()
 
     shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
+    shot.player = self.player
     shot.spawn(position)
     self.shot_on_cooldown = true
     self.timers.set_timeout(self.shot_cooldown, self, "remove_cooldown")
@@ -72,6 +73,7 @@ func spawn_tesla_shot():
     var position = self.get_pos() + self.shot_spawn_offset
 
     shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
+    shot.player = self.player
     shot.spawn(position)
     self.put_tesla_on_cooldown()
 
