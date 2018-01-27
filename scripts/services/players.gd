@@ -33,6 +33,7 @@ func _get_ship(ship_name):
     if ship == null:
         ship = self.ship_template.new(self.bag.board, self.bag.processing, self.bag.timers, self.bag.cache)
 
+    ship.reset()
     return ship
 
 func _build_players():

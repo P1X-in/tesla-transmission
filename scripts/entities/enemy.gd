@@ -1,14 +1,16 @@
 
 var processing
 var players
+var enemies
 
 var ship
 
 var path
 
-func _init(processing, players, ship, path):
+func _init(processing, players, enemies, ship, path):
     self.processing = processing
     self.players = players
+    self.enemies = enemies
     self.ship = ship
     self.path = path
 
@@ -32,13 +34,20 @@ func _get_objective_for_this_tick():
         'target' : self.path.get_next_target(ship_position, player_positions),
         'speed' : self.path.get_current_speed(ship_position, player_positions),
         'shooting' : self.path.get_shooting(ship_position, player_positions),
-        'current_position' : ship_position
+        'current_position' : ship_position,
+        'despawn' : self.path.should_despawn(ship_position),
+        'shot_cooldown' : self.path.get_shot_cooldown(ship_position)
     }
 
 func _head_towards_objective(objective):
+    if objective['despawn']:
+        self.despawn()
+        return
+
     var movement_vector = objective['target'] - objective['current_position']
     movement_vector = movement_vector.normalized()
 
     self.ship.shooting = objective['shooting']
     self.ship.movement_vector = movement_vector
     self.ship.velocity = objective['speed']
+    self.ship.shot_cooldown = objective['shot_cooldown']

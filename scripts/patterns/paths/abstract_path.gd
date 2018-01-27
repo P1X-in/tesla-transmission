@@ -10,3 +10,9 @@ func get_current_speed(ship_position, player_positions):
 
 func get_shooting(ship_position, player_positions):
     return false
+
+func should_despawn(ship_position):
+    return false
+
+func get_shot_cooldown(ship_position):
+    return 1

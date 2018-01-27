@@ -54,3 +54,8 @@ func _get_shot_instance():
 func despawn():
     .despawn()
     self.cache.store_instance(self.type_name, self)
+
+func reset():
+    self.shooting = false
+    self.shot_on_cooldown = false
+    self.shot_cooldown = 0.1
