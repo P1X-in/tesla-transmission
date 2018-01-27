@@ -166,6 +166,6 @@ autoplay = "intro"
 
 [node name="Particles" parent="." index="6" instance=ExtResource( 6 )]
 
-transform = Transform( 12, -2.09736e-06, -4.06036e-08, 2.0948e-06, 11.9932, -0.404699, 1.11314e-07, 0.404699, 11.9932, 0, 0, -279.85 )
+transform = Transform( 12, -2.09736e-06, -4.06036e-08, 2.0948e-06, 11.9932, -0.404699, 1.11314e-07, 0.404699, 11.9932, 0, 0, -352.363 )
 
 

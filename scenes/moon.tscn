@@ -29,7 +29,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[node name="moon" type="MeshInstance"]
+[node name="moon" type="MeshInstance" index="0"]
 
 transform = Transform( 64, 0, 4.17077e-05, 0, 64, 0, -4.17077e-05, 0, 64, 0, 0, -96 )
 layers = 1
