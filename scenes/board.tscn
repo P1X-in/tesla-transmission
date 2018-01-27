@@ -62,12 +62,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="world" type="Spatial" parent="." index="2"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="moon" parent="world" index="0" instance=ExtResource( 3 )]
 
-transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 64, -75.5071, 92.3463, -250 )
+transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 64, -116.061, 73.5896, -331.563 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="3"]
 

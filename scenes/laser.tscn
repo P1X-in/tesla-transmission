@@ -30,15 +30,15 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 1, 1, 1, 1 )
+albedo_color = Color( 0, 0.835938, 1, 1 )
 metallic = 0.0
 metallic_specular = 0.5
 metallic_texture_channel = 0
 roughness = 0.0
 roughness_texture_channel = 0
 emission_enabled = true
-emission = Color( 0.253906, 0.877594, 1, 1 )
-emission_energy = 4.0
+emission = Color( 0, 0.882812, 1, 1 )
+emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = false
 normal_enabled = false
@@ -61,13 +61,13 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Emission" ]
+_sections_unfolded = [ "Albedo", "Emission" ]
 
 [sub_resource type="BoxShape" id=3]
 
 extents = Vector3( 0.1, 0.1, 0.5 )
 
-[node name="laser" type="KinematicBody" index="0"]
+[node name="laser" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
