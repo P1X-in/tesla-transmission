@@ -1,65 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://materials/world_enviroment.tres" type="Environment" id=1]
-[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
-
-[sub_resource type="PlaneMesh" id=1]
-
-size = Vector2( 2, 2 )
-subdivide_width = 0
-subdivide_depth = 0
-
-[sub_resource type="SpatialMaterial" id=2]
-
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 0, 1, 0.0390625, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Detail", "Refraction", "Subsurf Scatter" ]
+[ext_resource path="res://assets/2k_stars_milky_way.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/moon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=4]
 
 [node name="test" type="Spatial"]
 
@@ -67,9 +11,10 @@ _sections_unfolded = [ "Albedo", "Detail", "Refraction", "Subsurf Scatter" ]
 
 environment = ExtResource( 1 )
 
-[node name="Camera" type="Camera" parent="." index="1"]
+[node name="Cinematic" type="Camera" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 12 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
@@ -77,25 +22,16 @@ h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
 projection = 0
-current = false
-fov = 90.0
+current = true
+fov = 60.0
 size = 1.0
 near = 0.05
-far = 100.0
+far = 400.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="player" parent="." index="2" instance=ExtResource( 2 )]
+[node name="milkeway" type="Sprite3D" parent="Cinematic" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="terrain" type="Spatial" parent="." index="3"]
-
-_sections_unfolded = [ "Transform" ]
-
-[node name="ground" type="MeshInstance" parent="terrain" index="0"]
-
-transform = Transform( 512, 0, 0, 0, 1, 0, 0, 0, 128, 0, 0, -96 )
+transform = Transform( 47.9997, 0.111636, -0.00303863, -0.111728, 47.9999, -0.000612199, 0.145792, 0.0297217, 0.999995, -8, -25, -192 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -105,12 +41,36 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
-skeleton = NodePath("..")
-material/0 = SubResource( 2 )
-_sections_unfolded = [ "Transform", "material" ]
+centered = true
+offset = Vector2( 0, 0 )
+flip_h = false
+flip_v = false
+modulate = Color( 1, 1, 1, 1 )
+opacity = 0.4
+pixel_size = 0.01
+axis = 2
+transparent = true
+shaded = false
+double_sided = true
+alpha_cut = 0
+texture = ExtResource( 2 )
+vframes = 1
+hframes = 1
+frame = 0
+region_enabled = false
+region_rect = Rect2( 0, 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
+[node name="world" type="Spatial" parent="." index="2"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="moon" parent="world" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 64, -75.5071, 92.3463, -250 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="3"]
 
 transform = Transform( 0.477839, -0.226803, 0.848664, 0.0620177, 0.972394, 0.224951, -0.876256, -0.0548581, 0.478713, 5.70959, 0.239865, 0.890096 )
 layers = 1
@@ -127,7 +87,7 @@ shadow_bias = 0.1
 shadow_contact = 0.0
 shadow_reverse_cull_face = false
 editor_only = false
-directional_shadow_mode = 0
+directional_shadow_mode = 1
 directional_shadow_split_1 = 0.1
 directional_shadow_split_2 = 0.2
 directional_shadow_split_3 = 0.5
@@ -137,5 +97,7 @@ directional_shadow_bias_split_scale = 0.25
 directional_shadow_depth_range = 1
 directional_shadow_max_distance = 200.0
 _sections_unfolded = [ "Directional Shadow", "Light", "Shadow", "Transform" ]
+
+[node name="player" parent="." index="4" instance=ExtResource( 4 )]
 
 

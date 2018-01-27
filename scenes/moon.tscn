@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://materials/moon.tres" type="Material" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+
+radius = 1.0
+height = 2.0
+radial_segments = 16
+rings = 24
+is_hemisphere = false
+
+[node name="moon" type="MeshInstance"]
+
+transform = Transform( 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, -96 )
+layers = 1
+material_override = ExtResource( 1 )
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Geometry", "LOD", "Transform", "material" ]
+
+

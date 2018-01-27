@@ -13,6 +13,14 @@ config_version=3
 config/name="Tesla Transmision"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+run/custom_user_dir_name=""
+
+[display]
+
+window/size/width=480
+window/size/height=270
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [rendering]
 
