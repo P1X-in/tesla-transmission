@@ -5,7 +5,7 @@ var cache
 
 var shot_template = preload("res://scripts/entities/shot.gd")
 var shot_template_name = 'laser'
-var shot_spawn_offset = Vector3(0, 0, -1.5)
+var shot_spawn_offset = Vector3(0, 0, -2.5)
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
 var shooting = false
@@ -24,6 +24,9 @@ func _init(board, processing, timers, cache).(board, processing):
 
     self.free_avatar = false
     self.type_name = 'ship'
+
+func reverse():
+    return
 
 func spawn_shot():
     if self.shot_on_cooldown:
@@ -61,6 +64,7 @@ func despawn():
     self.cache.store_instance(self.type_name, self)
 
 func reset():
+    .reset()
     self.shooting = false
     self.shot_on_cooldown = false
     self.shot_cooldown = 0.1

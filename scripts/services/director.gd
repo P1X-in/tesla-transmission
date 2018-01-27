@@ -18,8 +18,17 @@ var waves = [
     {
         'type' : 'side_front_wave',
         'params' : {
-            'altitude' : 2,
+            'altitude' : 0.7,
             'amount' : 10
+        },
+        'delay' : 3
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 5
         },
         'delay' : 3
     },

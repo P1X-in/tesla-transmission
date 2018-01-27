@@ -22,7 +22,7 @@ func despawn():
     self.processing.remove(self)
     .despawn()
 
-func reset_movement():
+func reset():
     self.movement_vector = Vector3()
 
 func process(delta):
