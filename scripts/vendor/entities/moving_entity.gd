@@ -5,8 +5,8 @@ var processing
 var velocity
 var movement_vector = Vector3(0, 0, 0)
 
-var position_constraint_positive = Vector3(0, 0, 0)
-var position_constraint_negative = Vector3(0, 0, 0)
+var position_constraint_positive = Vector3(2, 4, 0)
+var position_constraint_negative = Vector3(-2, 1, 0)
 var constrain_position = false
 
 func _init(board, processing).(board):
@@ -31,7 +31,7 @@ func _modify_position(delta):
     var motion
 
     motion = self.movement_vector * self.velocity
-    self.avatar.move_and_slide(self.motion)
+    self.avatar.move_and_slide(motion)
 
 func _constrain_position():
     if not self.constrain_position:

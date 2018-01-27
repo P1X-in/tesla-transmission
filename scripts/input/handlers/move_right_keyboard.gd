@@ -7,5 +7,7 @@ func _init(ship):
     self.ship = ship
 
 func handle(event):
-    if event.is_pressed():
-        self.ship.move_right()
+    if event.is_pressed() and not event.is_echo():
+        return
+    else:
+        return

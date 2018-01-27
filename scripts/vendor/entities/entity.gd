@@ -10,15 +10,15 @@ func _init(board):
     self.board = board
 
 func get_pos():
-    return self.avatar.get_pos()
+    return self.avatar.get_translation()
 
 func set_pos(position):
-    self.avatar.set_pos(position)
+    self.avatar.set_translation(position)
 
 func spawn(position):
     self.attach()
     self.initial_position = position
-    self.avatar.set_pos(self.initial_position)
+    self.set_pos(self.initial_position)
 
 func despawn():
     self.is_processing = false
