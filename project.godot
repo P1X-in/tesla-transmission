@@ -10,11 +10,10 @@ config_version=3
 
 [application]
 
-config/name="Tesla Transmision"
+config/name="Tesla Transmission"
 run/main_scene="res://scenes/main.tscn"
 boot_splash/image="res://assets/splash.png"
 config/icon="res://icon.png"
-run/custom_user_dir_name=""
 
 [display]
 
@@ -23,6 +22,19 @@ window/size/height=360
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
+[gdnative]
+
+singletons=[  ]
+
+[memory]
+
+multithread/thread_rid_pool_prealloc=60
+
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+quality/filters/use_nearest_mipmap_filter=true
+quality/depth_prepass/enable=false
+environment/default_clear_color=Color( 1, 1, 1, 1 )
+quality/filters/msaa=1
+environment/default_environment="res://materials/world_enviroment.tres"
+quality/msaa=2
