@@ -1,10 +1,10 @@
 extends "res://scripts/patterns/paths/abstract_path.gd"
 
-func _init(altitude):
-    self.initial_position = Vector3(100, altitude, -60)
+func _init(altitude, distance):
+    self.initial_position = Vector3(100, altitude, distance)
 
     self.path['waypoint1'] = {
-        'target' : Vector3(40, altitude, -50),
+        'target' : Vector3(40, altitude, distance),
         'speed' : 50,
         'shooting' : false,
         'despawn' : false,
@@ -14,7 +14,7 @@ func _init(altitude):
     }
 
     self.path['waypoint2'] = {
-        'target' : Vector3(20, altitude, -40),
+        'target' : Vector3(-40, altitude, distance),
         'speed' : 25,
         'shooting' : true,
         'despawn' : false,
@@ -24,7 +24,7 @@ func _init(altitude):
     }
 
     self.path['waypoint3'] = {
-        'target' : Vector3(10, altitude, -30),
+        'target' : Vector3(40, altitude, distance),
         'speed' : 25,
         'shooting' : true,
         'despawn' : false,
@@ -33,7 +33,7 @@ func _init(altitude):
         'next' : 'waypoint4'
     }
     self.path['waypoint4'] = {
-        'target' : Vector3(0, altitude, -20),
+        'target' : Vector3(-40, altitude, distance),
         'speed' : 25,
         'shooting' : true,
         'despawn' : false,
@@ -43,9 +43,9 @@ func _init(altitude):
     }
 
     self.path['waypoint5'] = {
-        'target' : Vector3(-10, altitude, 4),
-        'speed' : 25,
-        'shooting' : true,
+        'target' : Vector3(-100, altitude, distance),
+        'speed' : 50,
+        'shooting' : false,
         'despawn' : false,
         'threshold' : 0.5,
         'shot_cooldown' : 2,
@@ -53,7 +53,7 @@ func _init(altitude):
     }
 
     self.path['waypoint6'] = {
-        'target' : Vector3(-10, altitude, 4),
+        'target' : Vector3(-100, altitude, distance),
         'speed' : 25,
         'shooting' : false,
         'despawn' : true,

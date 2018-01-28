@@ -1,4 +1,6 @@
 
+const DEBUG = true
+
 var timers
 var enemies
 var factory
@@ -9,6 +11,7 @@ var iterator
 var pattern_name
 
 var reversed_x = false
+var reversed_y = false
 
 func _init(timers, enemies, factory):
     self.timers = timers
@@ -48,14 +51,19 @@ func _perform_step(iteration):
     var path = self._get_path(pattern_step['path_type'], pattern_step['path_params'])
     var enemy = self.enemies.build_enemy(pattern_step['ship_type'], path)
 
+    if self.DEBUG:
+        print('performing: ' + pattern_step['path_type'])
+
     enemy.spawn()
 
 func _get_path(type, params):
     var path = self.factory.get(type, params)
     path.reversed_x = self.reversed_x
+    path.reversed_y = self.reversed_y
     return path
 
 func reset():
     self.pattern = []
     self.iterator = 0
     self.reversed_x = false
+    self.reversed_y = false

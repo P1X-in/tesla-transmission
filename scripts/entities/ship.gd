@@ -12,6 +12,7 @@ var tesla_cooldown = 0.4
 var tesla_on_cooldown = false
 
 var shot_spawn_offset = [Vector3(0, 0, -3.5)]
+var tesla_spawn_offset = [Vector3(0, 0, -3.5)]
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
 var shooting = false
@@ -72,7 +73,7 @@ func spawn_tesla_shot():
     var shot
     var position
 
-    for shot_offset in self.shot_spawn_offset:
+    for shot_offset in self.tesla_spawn_offset:
         shot = self._get_tesla_shot_instance()
         position = self.get_pos() + shot_offset
 

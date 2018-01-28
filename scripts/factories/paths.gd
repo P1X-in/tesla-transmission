@@ -1,7 +1,8 @@
 extends "res://scripts/vendor/bag_aware.gd"
 
 var path_templates = {
-    'side_front_curve' : preload("res://scripts/patterns/paths/side_front_curve.gd")
+    'side_front_curve' : preload("res://scripts/patterns/paths/side_front_curve.gd"),
+    'side_to_side' : preload("res://scripts/patterns/paths/side_to_side.gd"),
 }
 
 func get(type, params):
@@ -20,6 +21,8 @@ func _build_new_path(type, params):
 
     if type == 'side_front_curve':
         path = self.path_templates[type].new(params['altitude'])
+    elif type == 'side_to_side':
+        path = self.path_templates[type].new(params['altitude'], params['distance'])
     else:
         path = self.path_templates[type].new()
 

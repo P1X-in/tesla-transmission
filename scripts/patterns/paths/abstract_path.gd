@@ -1,15 +1,20 @@
 
+var Y_TOP = 12
+
 var initial_position = Vector3(0, 0, 0)
 
 var path = {}
 var current_step = 'waypoint1'
 
 var reversed_x = false
+var reversed_y = false
 
 func get_initial_position():
     var position = self.initial_position
     if self.reversed_x:
         position.x = -position.x
+    if self.reversed_y:
+        position.y = self.Y_TOP - position.y
 
     return position
 
@@ -18,9 +23,13 @@ func get_next_target(ship_position, player_positions):
     self._check_change_waypoint(ship_position)
 
     position = self.path[self.current_step]['target']
+    position = Vector3(position.x, position.y, position.z)
 
     if self.reversed_x:
-        position = Vector3(-position.x, position.y, position.z)
+        position.x = -position.x
+
+    if self.reversed_y:
+        position.y = self.Y_TOP - position.y
 
     return position
 
@@ -44,8 +53,13 @@ func _is_close(ship_position):
     var current_target = self.path[self.current_step]
     var position = current_target['target']
 
+    position = Vector3(position.x, position.y, position.z)
+
     if self.reversed_x:
-        position = Vector3(-position.x, position.y, position.z)
+        position.x = -position.x
+
+    if self.reversed_y:
+        position.y = self.Y_TOP - position.y
 
     var diff_x = abs(ship_position.x - position.x)
     var diff_y = abs(ship_position.y - position.y)
