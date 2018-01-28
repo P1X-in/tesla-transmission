@@ -257,6 +257,120 @@ var waves = [
         },
         'delay' : 10
     },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 6,
+            'amount' : 10,
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 6,
+            'amount' : 10,
+            'reversed_x' : true,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 1,
+            'amount' : 10,
+            'reversed_x' : true,
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 11,
+            'amount' : 10,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 1,
+            'amount' : 10,
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 11,
+            'amount' : 10,
+            'reversed_x' : true,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 1,
+            'amount' : 10,
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 6,
+            'amount' : 10,
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 11,
+            'amount' : 10,
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 1,
+            'amount' : 10,
+            'reversed_x' : true,
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 6,
+            'amount' : 10,
+            'reversed_x' : true,
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'short_charge_wave',
+        'params' : {
+            'altitude' : 11,
+            'amount' : 10,
+            'reversed_x' : true,
+        },
+        'delay' : 10
+    },
 ]
 
 
