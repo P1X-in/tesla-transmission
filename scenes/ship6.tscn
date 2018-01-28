@@ -5,10 +5,14 @@
 
 [node name="ship6" index="0" instance=ExtResource( 1 )]
 
+ship_name = "cyclops"
+
 [node name="MeshInstance" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
 _sections_unfolded = [ "Transform", "material" ]
 
 

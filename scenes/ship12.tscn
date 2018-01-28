@@ -5,8 +5,11 @@
 
 [node name="ship12" index="0" instance=ExtResource( 1 )]
 
+ship_name = "gaia"
+
 [node name="MeshInstance" parent="." index="1"]
 
 mesh = ExtResource( 2 )
+material/0 = null
 
 
