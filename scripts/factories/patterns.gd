@@ -3,6 +3,7 @@ extends "res://scripts/vendor/bag_aware.gd"
 var wave_templates = {
     'side_front_wave' : preload("res://scripts/patterns/side_front_wave.gd"),
     'wall_wave' : preload("res://scripts/patterns/wall_wave.gd"),
+    'top_bottom_wave' : preload("res://scripts/patterns/top_bottom_wave.gd"),
 }
 
 func get(type, params):
@@ -25,7 +26,7 @@ func _get_pattern(type, params):
     if params.has('reversed_x'):
         pattern.reversed_x = params['reversed_x']
     if params.has('reversed_y'):
-        pattern.reversed_x = params['reversed_y']
+        pattern.reversed_y = params['reversed_y']
 
     return pattern
 
@@ -36,6 +37,8 @@ func _build_new_pattern(type, params):
         pattern = self.wave_templates[type].new(self.bag.timers, self.bag.enemies, self.bag.paths_factory, params['altitude'], params['amount'])
     elif type == 'wall_wave':
         pattern = self.wave_templates[type].new(self.bag.timers, self.bag.enemies, self.bag.paths_factory, params['distance'])
+    elif type == 'top_bottom_wave':
+        pattern = self.wave_templates[type].new(self.bag.timers, self.bag.enemies, self.bag.paths_factory, params['amount'])
     else:
         pattern = self.wave_templates[type].new(self.bag.timers, self.bag.enemies, self.bag.paths_factory)
 

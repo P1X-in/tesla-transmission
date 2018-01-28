@@ -67,13 +67,13 @@ _sections_unfolded = [ "Albedo", "Emission" ]
 
 [sub_resource type="BoxShape" id=3]
 
-extents = Vector3( 0.1, 0.1, 0.5 )
+extents = Vector3( 0.457902, 0.49344, 0.5 )
 
 [node name="laser" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
-collision_layer = 1
+collision_layer = 0
 collision_mask = 1
 axis_lock_linear_x = false
 axis_lock_linear_y = false

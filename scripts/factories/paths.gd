@@ -3,6 +3,8 @@ extends "res://scripts/vendor/bag_aware.gd"
 var path_templates = {
     'side_front_curve' : preload("res://scripts/patterns/paths/side_front_curve.gd"),
     'side_to_side' : preload("res://scripts/patterns/paths/side_to_side.gd"),
+    'top_bottom_curve' : preload("res://scripts/patterns/paths/top_bottom_curve.gd"),
+
 }
 
 func get(type, params):

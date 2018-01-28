@@ -61,7 +61,47 @@ var waves = [
             'distance' : -20,
             'reversed' : true
         },
-        'delay' : 5
+        'delay' : 10
+    },
+
+    {
+        'type' : 'top_bottom_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 10,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'top_bottom_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 10,
+            'reversed_x' : true,
+            'reversed_y' : true,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'top_bottom_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 10,
+            'reversed_y' : true
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'top_bottom_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 10,
+            'reversed_x' : true,
+        },
+        'delay' : 10
     },
 ]
 
