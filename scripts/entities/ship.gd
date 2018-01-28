@@ -11,7 +11,7 @@ var tesla_shot_template_name = 'tesla_shot'
 var tesla_cooldown = 0.4
 var tesla_on_cooldown = false
 
-var shot_spawn_offset = Vector3(0, 0, -3.5)
+var shot_spawn_offset = [Vector3(0, 0, -3.5)]
 var shot_cooldown = 0.1
 var shot_on_cooldown = false
 var shooting = false
@@ -42,24 +42,26 @@ func set_enemy_collisions():
     self.avatar.set_collision_layer(0)
     self.avatar.set_collision_mask(1)
 
-func reverse():
-    .reverse()
-    self.shot_spawn_offset.z = -self.shot_spawn_offset.z
-
 
 func spawn_shot():
     if self.shot_on_cooldown:
         return
 
-    var shot = self._get_shot_instance()
-    var position = self.get_pos() + self.shot_spawn_offset
+    var shot
+    var position
 
-    if self.reversed:
-        shot.reverse()
+    for shot_offset in self.shot_spawn_offset:
+        shot = self._get_shot_instance()
 
-    shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
-    shot.player = self.player
-    shot.spawn(position)
+        if self.reversed:
+            shot.reverse()
+            shot_offset.z = -shot_offset.z
+
+        position = self.get_pos() + shot_offset
+
+        shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
+        shot.player = self.player
+        shot.spawn(position)
     self.shot_on_cooldown = true
     self.timers.set_timeout(self.shot_cooldown, self, "remove_cooldown")
 
@@ -67,12 +69,16 @@ func spawn_tesla_shot():
     if self.tesla_on_cooldown:
         return
 
-    var shot = self._get_tesla_shot_instance()
-    var position = self.get_pos() + self.shot_spawn_offset
+    var shot
+    var position
 
-    shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
-    shot.player = self.player
-    shot.spawn(position)
+    for shot_offset in self.shot_spawn_offset:
+        shot = self._get_tesla_shot_instance()
+        position = self.get_pos() + shot_offset
+
+        shot.set_collisions(self.avatar.get_collision_layer(), self.avatar.get_collision_mask())
+        shot.player = self.player
+        shot.spawn(position)
     self.put_tesla_on_cooldown()
 
 func remove_cooldown():
@@ -127,6 +133,5 @@ func reset():
     self.constrain_position = true
     self.enemy = null
     self.player = null
-    self.shot_spawn_offset = Vector3(0, 0, -2.5)
     self.avatar.set_collision_layer(1)
     self.avatar.set_collision_mask(1)

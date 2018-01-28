@@ -3,7 +3,7 @@ extends "res://scripts/vendor/entities/moving_entity.gd"
 var cache
 
 var dead_end_position = -100
-var front_end_position = 2
+var front_end_position = 30
 
 var player
 
