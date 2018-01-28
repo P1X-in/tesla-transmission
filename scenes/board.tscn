@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://materials/world_enviroment.tres" type="Environment" id=1]
 [ext_resource path="res://assets/2k_stars_milky_way.jpg" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/planet2.jpg" type="Texture" id=5]
 [ext_resource path="res://assets/planet_rings.png" type="Texture" id=6]
 [ext_resource path="res://scenes/stars_particles.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/sounds/tesla_soundtrack.ogg" type="AudioStream" id=8]
 
 [sub_resource type="SphereMesh" id=1]
 
@@ -258,5 +259,13 @@ _sections_unfolded = [ "Directional Shadow", "Light", "Shadow", "Transform" ]
 [node name="Particles" parent="." index="4" instance=ExtResource( 7 )]
 
 transform = Transform( 16, -2.79649e-06, -5.41388e-08, 2.79307e-06, 15.9909, -0.539597, 1.48419e-07, 0.539597, 15.9909, 0, 0, -405 )
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 8 )
+volume_db = -9.85
+autoplay = true
+mix_target = 0
+bus = "Master"
 
 
