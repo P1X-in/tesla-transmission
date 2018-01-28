@@ -103,6 +103,160 @@ var waves = [
         },
         'delay' : 10
     },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 1,
+            'amount' : 10
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 6,
+            'amount' : 10,
+            'reversed_x' : true
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 10,
+            'amount' : 10
+        },
+        'delay' : 8
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 1,
+            'amount' : 10,
+            'reversed_x' : true
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 6,
+            'amount' : 10
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 10,
+            'amount' : 10,
+            'reversed_x' : true
+        },
+        'delay' : 8
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 1,
+            'amount' : 10
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 6,
+            'amount' : 10
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 10,
+            'amount' : 10
+        },
+        'delay' : 8
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 1,
+            'amount' : 10,
+            'reversed_x' : true
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 6,
+            'amount' : 10,
+            'reversed_x' : true
+        },
+        'delay' : 0.1
+    },
+
+    {
+        'type' : 'side_front_wave',
+        'params' : {
+            'altitude' : 10,
+            'amount' : 10,
+            'reversed_x' : true
+        },
+        'delay' : 8
+    },
+
+    {
+        'type' : 'top_bottom_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 10,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'top_bottom_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 10,
+            'reversed_x' : true,
+            'reversed_y' : true,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'top_bottom_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 10,
+            'reversed_y' : true
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'top_bottom_wave',
+        'params' : {
+            'altitude' : 8,
+            'amount' : 10,
+            'reversed_x' : true,
+        },
+        'delay' : 10
+    },
 ]
 
 
