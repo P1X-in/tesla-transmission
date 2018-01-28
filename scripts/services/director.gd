@@ -481,8 +481,11 @@ func abort():
     self.iterator = 0
 
 func _perform_next_wave():
-    if self.is_finished() or not self.started:
+    if not self.started:
         return
+
+    if self.is_finished():
+        self.iterator = 4
 
     self._perofrm_wave()
     var delay = self.waves[self.iterator]['delay']
