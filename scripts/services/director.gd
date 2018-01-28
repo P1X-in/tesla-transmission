@@ -255,7 +255,7 @@ var waves = [
             'amount' : 10,
             'reversed_x' : true,
         },
-        'delay' : 10
+        'delay' : 12
     },
 
     {
@@ -368,6 +368,95 @@ var waves = [
             'altitude' : 11,
             'amount' : 10,
             'reversed_x' : true,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'wall_wave',
+        'params' : {
+            'distance' : -50,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'wall_wave',
+        'params' : {
+            'distance' : -40,
+            'reversed' : true
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'wall_wave',
+        'params' : {
+            'distance' : -30,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'wall_wave',
+        'params' : {
+            'distance' : -20,
+            'reversed' : true
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'wall_wave',
+        'params' : {
+            'distance' : -10,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'square_charge_wave',
+        'params' : {
+            'distance' : -10,
+            'amount' : 10,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'square_charge_wave',
+        'params' : {
+            'distance' : -20,
+            'amount' : 10,
+            'reversed' : true
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'square_charge_wave',
+        'params' : {
+            'distance' : -30,
+            'amount' : 10,
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'square_charge_wave',
+        'params' : {
+            'distance' : -40,
+            'amount' : 10,
+            'reversed' : true
+        },
+        'delay' : 10
+    },
+
+    {
+        'type' : 'square_charge_wave',
+        'params' : {
+            'distance' : -50,
+            'amount' : 10,
         },
         'delay' : 10
     },

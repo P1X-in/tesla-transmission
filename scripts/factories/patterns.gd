@@ -5,6 +5,7 @@ var wave_templates = {
     'wall_wave' : preload("res://scripts/patterns/wall_wave.gd"),
     'top_bottom_wave' : preload("res://scripts/patterns/top_bottom_wave.gd"),
     'short_charge_wave' : preload("res://scripts/patterns/short_charge_wave.gd"),
+    'square_charge_wave' : preload("res://scripts/patterns/square_charge_wave.gd"),
 }
 
 func get(type, params):
@@ -42,6 +43,8 @@ func _build_new_pattern(type, params):
         pattern = self.wave_templates[type].new(self.bag.timers, self.bag.enemies, self.bag.paths_factory, params['amount'])
     elif type == 'short_charge_wave':
         pattern = self.wave_templates[type].new(self.bag.timers, self.bag.enemies, self.bag.paths_factory, params['altitude'], params['amount'])
+    elif type == 'square_charge_wave':
+        pattern = self.wave_templates[type].new(self.bag.timers, self.bag.enemies, self.bag.paths_factory, params['distance'], params['amount'])
     else:
         pattern = self.wave_templates[type].new(self.bag.timers, self.bag.enemies, self.bag.paths_factory)
 
